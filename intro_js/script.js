@@ -1,5 +1,18 @@
- //vetores
- //declaração
+//funções, código 1.6.1
+//definição
+// function hello(){ //definição de funcão (aponta pra 'oi')
+//     console.log('oi');
+// }
+// //chamada da função
+// hello();
+
+// function hello(nome){ //redefinição de função (aponta agora para 'Oi, nome' )
+//     console.log('Oi, ' + nome);
+// }
+// hello('Pedro');//chamada da função (apontando para 'Oi, ')
+
+//vetores
+//declaração
 //  v1 = [];
 //  console.log(v1.length);
 //  v1[0] = 3.4;
