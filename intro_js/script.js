@@ -1,3 +1,130 @@
+// const valores = [1, 2, 3, 4]
+// const res = valores.reduce((ac, v) => ac + v)
+// console.log(res)
+
+// const nomes = ['Ana Paula', 'Antonio', 'Rodrigo', 'Alex', 'Cristina']
+//produzir um novo vetor contendo a letra inicial de cada nome
+// const peloMenosUmComecaComA = nomes.some(n => n.toLowerCase().startsWith('a'))
+// console.log(peloMenosUmComecaComA)
+// const todosComecamComA = nomes.every(nome => nome.startsWith("A") || nome.startsWith("a"))
+// console.log(todosComecamComA)
+// const todosComecamComA = nomes.every((nome) => {return nome[0] === 'A' || nome[0] === 'a'})
+// console.log(todosComecamComA)
+
+// const resultante = nomes.map((nome) => {return nome.charAt(0)})
+// console.log(resultante)
+
+// const resultante = []
+// for (let i =0; i < nomes.length; i++){
+//     resultante.push(nomes[i][0])
+// }
+// console.log(resultante)
+
+//produza um novo vetor contendo somente os nomes que começam com A
+// const resultante = nomes.filter(function(nome) {return nome[0] === 'A' || nome[0] ==='a'})
+// console.log(resultante)
+
+//Solução com programação imperativa:
+// const resultante = []
+// for (let i = 0; i < nomes.length; i++){
+//     if(nomes[i] [0] === 'A' || nomes[i] [0] == 'a')
+//         resultante.push(nomes[i])
+// }
+// console.log(resultante)
+
+//closure
+// function eAgora(){
+//     let cont = 1
+//     function f1(){
+//         console.log(cont)
+//     }
+//     cont++
+//     function f2(){
+//         console.log(cont)
+//     }
+//     cont++
+//     return{f1, f2}
+// }
+// const resultadoDaEAgora = eAgora()
+// resultadoDaEAgora.f1()
+// resultadoDaEAgora.f2()
+
+// function saudacoesFactory(saudacao, nome){
+//     return function(){
+//         console.log(`${saudacao}, ${nome}`)
+//     }
+// }
+// const olaJoao = saudacoesFactory('Olá', 'João')
+// olaJoao()
+
+// function ola(){
+//     let nome = "João"
+//     return function(){
+//         console.log('Olá, ' + nome)
+//     }
+// }
+// const resultadoDaOla = ola()
+// resultadoDaOla()
+
+// function f(){ //função externa
+//     let nome = 'João'
+//     function g(){ //função interna
+//         console.log(nome)
+//     }
+//     g()
+// }
+// f()
+
+// function f(funcao){ //highest order function
+//     funcao()
+// }
+
+// function g(){ //highest order function
+//     //1.Definir a função
+//     function outraFuncao(){
+//         console.log("Fui criada por g")    
+//     }
+//     //2. Devolver a funcao outraFuncao
+//     return outraFuncao
+// }
+// f(g())
+
+// const resultadoDaG = g()
+// resultadoDaG()
+
+//como chamar a outraFuncao sem guardar o resultado da g em uma constante nem em uma variável
+// g()()
+
+// f(function(){ //funcao() se torna um ponteiro para este bloco de codigo
+//     console.log("Sendo passada para f")
+// })
+
+// const umaFuncao = function(){
+//     console.log("Fui armazenada em uma constante")
+// }
+// umaFuncao()
+
+//funções regulares: function
+//arrow function: () => {}
+// const ehPar = (n) => {
+//     console.log(n)
+//     return n % 2 === 0}
+// console.log(ehPar(7))
+// const dobro = (valor) => {valor * 2}
+// console.log(dobro(7))
+// const t3 = () => 2 + 2 //return implícito
+// console.log(t3())
+// const t2 = () => console.log('Sou a t2')
+// t2()
+// const t1 = n => {console.log(n)}
+// t1(1)
+
+// function soma(a, b) {
+//     return a + b;
+// }
+// const res = soma(2, 3);
+// console.log(res);
+
 //funções, código 1.6.1
 //definição
 // function hello(){ //definição de funcão (aponta pra 'oi')
