@@ -1,3 +1,155 @@
+const computacaoDemorada = () => {
+    //aqui demora pois a funcao é iobound
+}
+
+//processamento síncrono (bloqueante) e processamento assíncrono(não bloqueante)
+// const fs = require('fs')
+// //função callback
+function calculoDemorado(n){
+    //1 + 2 + ... + n-1 + n
+    //1. Construir um objeto do tipo Promise, entregando para o construtor a função que representa a computação demorada
+    //a função que representa a computação demorada, recebe duas funções como parâmetro. A primeira deve ser chamada quando a computação terminar com sucesso. A segunda, por outro lado, deve ser chamada quando a computação terminar com erro.
+    const p = new Promise((resolve, reject) => {
+        let acumulador = 0
+        for (let i = 1; i <= n; i++) 
+            acumulador += i
+        resolve(acumulador)    
+    })
+    //2 devolver a promise
+    return p
+}
+
+const promiseResultante = calculoDemorado(10)
+promiseResultante.then((res) => {
+    console.log(`Deu certo: ${res}`)
+})
+
+// //inferno de callbacks
+// //callback hell
+// const exibirConteudo = (erro, conteudo) => {
+//     if(erro){
+//         console.log(`Deu erro: ${erro}`)
+//     }
+//     else{
+//         console.log(`Funcionou: ${conteudo.toString()}`)
+//         const dobro = Number(conteudo.toString()) * 2
+//         //callback (você define mas não chama)
+//         const finalizar = (erro) => {
+//             console.log(`${erro ? 'Deu erro: ' + erro : 'Dobro armazenado com sucesso. C'}`)
+//         }
+//         fs.writeFile('dobro.txt', dobro.toString(), finalizar)
+//         console.log("A")
+//     }
+// }
+// fs.readFile("arquivo.txt", exibirConteudo)//IO-Bound
+// console.log("B")
+// function dobro(n){
+//     return 2 * n
+// }
+// const res = dobro(5)
+// console.log(res)
+//IO-Bound
+
+
+//objetos JSON: JavaScript Object Notation
+
+
+//objetos literais Javascript
+
+// Uma calculadora realiza operações de soma e subtração
+//a soma deve ser feita com uma função regular, ou seja, usando function
+//a subtração deve ser feita com uma arrow function sem return
+// const calculadora = {
+//     soma: function(a, b){
+//         return a + b
+//     },
+//     subtracao: (a, b) => a - b   
+// }
+
+// console.log(calculadora.soma(2, 3))
+
+
+//Uma concessionária que tem CNPJ e endereço (logradouro, numero e bairro). Ela tem um estoque de veiculos. Cada veiculo tem marca, modelo e ano de fabricação. Em um determinado momento, talvez o estoque esteja vazio. Noutro, talvez ele tenha 17 veiculos.
+// const concessionaria = {
+//     cnpj: '0000',
+//     endereco: {
+//         logradouro: "Avenida Brasil",
+//         numero: 300,
+//         bairro: {
+//             nome: 'Vila J',
+//             quantidadeMoradores: 500
+//         }
+//     },
+//     veiculos: [
+//         {
+//             marca: 'Fiat',
+//             modelo: 'Uno',
+//             ano: 1990
+//         },
+//         {
+//             marca: 'Honda',
+//             modelo: 'Fit',
+//             ano: 2010
+//         }
+//     ]
+// }
+
+// for (let veiculo of concessionaria.veiculos){
+//     console.log(veiculo.marca)    
+// }
+
+// for(let i = 0; i < concessionaria.veiculos.length; i++){
+//     //mostrar somente a marca de cada veiculo a cada iteração
+//     console.log(concessionaria.veiculos[i].marca)
+// }
+
+// Fit
+// console.log(concessionaria.veiculos[1].modelo)
+
+
+
+//uma pessoa chamada Maria, com 21 anos e que mora na Rua b, número 10
+
+
+// const pessoa = {
+//     nome: 'Maria',
+//     idade: 21,
+//     endereco: {
+//         logradouro: 'Rua B',
+//         numero: 10
+//     }
+// }
+
+// console.log(pessoa.endereco)
+// console.log(pessoa.endereco.logradouro)
+// console.log(pessoa['endereco']['numero'])
+// console.log(pessoa['endereco'].logradouro)
+// console.log(pessoa.endereco['numero'])
+
+// const pessoa = {
+//     nome: 'Maria',
+//     idade: 21,
+//     logradouro: 'Rua B',
+//     numero: 10
+// }
+
+//uma pessoa que se chama João e tem 17 anos
+// const pessoa = {
+//     nome: 'João',
+//     idade: 17
+// }
+
+// console.log(pessoa.nome)
+// console.log(pessoa['idade'])
+
+// // operador de desestruturação de objeto
+// const { nome, idade } = pessoa
+// console.log(nome, idade)
+
+// const nome = pessoa.nome
+// const idade = pessoa.idade
+// console.log(nome, idade)
+
 // const valores = [1, 2, 3, 4]
 // const res = valores.reduce((ac, v) => ac + v)
 // console.log(res)
