@@ -1,28 +1,65 @@
-const computacaoDemorada = () => {
-    //aqui demora pois a funcao é iobound
-}
+
+
+//1 + 2 + ... + (n-1) + n
+// function calculoRapidinho(n){
+//     //compete para que essa função opere como antes, não vale usar os métodos resolve e reject da clase Promise
+//     return new Promise((resolve, reject) => {
+//         n < 0 ? reject('Use apenas números positivos!') : resolve((n / 2) * (n + 1));
+//       });
+//     }
+
+// function calculoRapidinho(n){
+//     //verificar se n é negativo
+//     //se for negativo, devolver uma promise no estado rejected com a seguinte mensagem de erro: Use apenas números positivos
+//     //caso contrário, devolver uma promise fullfilled, como já estamos fazendo
+//     //não pode usar if/else nem switch/case
+//     return n < 0 ? Promise.reject('Use apenas números positivos') : Promise.resolve((n / 2) * (n + 1))
+// }
+// calculoRapidinho(10)
+// .then((abc) => {
+//     console.log(`Sucesso: ${abc}`)
+// })
+// .catch((err) => {console.log(`Erro: ${err}`)})
+
+// function calculoDemorado(n){
+//     const p = new Promise((resolve, reject) => { //resolve e reject são nomes que fazem referencia as funções, ponteiros que podem ser chamados por funções 
+//         let ac = 0;
+//         for(let i = 1; i<= n; i++) ac += i;
+//         resolve(ac);
+//     })
+//     return p;
+// }
+
+// const minhaPromise = calculoDemorado(10);
+// minhaPromise.then((res) => {
+//     console.log(`Sucesso: ${res}`);
+// })
+
+// const computacaoDemorada = () => {
+//     //aqui demora pois a funcao é iobound
+// }
 
 //processamento síncrono (bloqueante) e processamento assíncrono(não bloqueante)
 // const fs = require('fs')
 // //função callback
-function calculoDemorado(n){
+// function calculoDemorado(n){
     //1 + 2 + ... + n-1 + n
     //1. Construir um objeto do tipo Promise, entregando para o construtor a função que representa a computação demorada
     //a função que representa a computação demorada, recebe duas funções como parâmetro. A primeira deve ser chamada quando a computação terminar com sucesso. A segunda, por outro lado, deve ser chamada quando a computação terminar com erro.
-    const p = new Promise((resolve, reject) => {
-        let acumulador = 0
-        for (let i = 1; i <= n; i++) 
-            acumulador += i
-        resolve(acumulador)    
-    })
+    // const p = new Promise((resolve, reject) => {
+    //     let acumulador = 0
+    //     for (let i = 1; i <= n; i++) 
+    //         acumulador += i
+    //     resolve(acumulador)    
+    // })
     //2 devolver a promise
-    return p
-}
+    // return p
+// }
 
-const promiseResultante = calculoDemorado(10)
-promiseResultante.then((res) => {
-    console.log(`Deu certo: ${res}`)
-})
+// const promiseResultante = calculoDemorado(10)
+// promiseResultante.then((res) => {
+//     console.log(`Deu certo: ${res}`)
+// })
 
 // //inferno de callbacks
 // //callback hell
